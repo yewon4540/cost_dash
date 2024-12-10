@@ -1,0 +1,12 @@
+services:
+  import_data:
+    build:
+      context: ./crawl
+      dockerfile: Dockerfile
+    hostname: crawl
+    container_name: crawl
+    volumes:
+      - ./crawl:/home/crawl
+        # networks:
+        # - hmm
+
