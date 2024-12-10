@@ -20,6 +20,12 @@ keyword_mapping = {
 df['제품'] = df['제품'].map(lambda x: keyword_mapping.get(x, x))
 df['제품'] = df['제품'].fillna('총계')
 
+# 총계 제거하기
+try:
+    df.drop('총계 (￦)', axis=1, inplace=True)
+except:
+    pass
+
 # 날짜 열 추출
 date_columns = df.columns[2:-1]
 
